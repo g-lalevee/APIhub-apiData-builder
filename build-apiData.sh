@@ -115,5 +115,4 @@ echo "ORIGINAL_UPDATE_TIME=$X_ORIGINAL_UPDATE_TIME"
 
 echo " "
 echo "INFO ---------- Create apiData file from template -------------------------------------------------"
-envsubst < $apihub_apiData_template > output.txt
-
+envsubst < $apihub_apiData_template > apiData.json
