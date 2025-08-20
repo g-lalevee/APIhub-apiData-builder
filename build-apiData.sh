@@ -1,9 +1,6 @@
 #!/bin/bash
 
 echo "INFO ---------- Get target Apigee Organization and +++ from .env file ----------"
-set -a
-source .env
-set +a
 
 echo "Proxy-name=$proxy_name"
 echo "Apigee deployment suffix=$apigee_deployment_suffix"
