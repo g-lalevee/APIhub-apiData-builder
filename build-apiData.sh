@@ -57,7 +57,9 @@ echo "SPEC_FILE_NAME=$X_SPEC_FILE_NAME"
 # export X_API_DISPLAY_NAME=$(cat $SPEC_FILE_PATH | apigee-go-gen transform yaml-to-json | jq -r .info.title)
 export X_API_DISPLAY_NAME="$proxy_name$apigee_deployment_suffix"
 export X_API_DESCRIPTION=$(cat $SPEC_FILE_PATH | apigee-go-gen transform yaml-to-json | jq -r .info.description)
-export X_API_VERSION=$(cat $SPEC_FILE_PATH | apigee-go-gen transform yaml-to-json | jq -r .info.version)
+X_API_VERSION=$(cat $SPEC_FILE_PATH | apigee-go-gen transform yaml-to-json | jq -r .info.version)
+export X_API_VERSION=$(echo "$X_API_VERSION" | cut -d '.' -f 1)
+
 export X_API_OWNER_NAME=$(cat $SPEC_FILE_PATH | apigee-go-gen transform yaml-to-json | jq -r .info.contact.name)
 export X_API_OWNER_EMAIL=$(cat $SPEC_FILE_PATH | apigee-go-gen transform yaml-to-json | jq -r .info.contact.email)
 export X_CONTENT_B64=$(base64 --wrap=0 $SPEC_FILE_PATH)
