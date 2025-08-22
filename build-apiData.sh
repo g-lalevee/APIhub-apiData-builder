@@ -27,14 +27,14 @@ echo "ORIGINAL_ID=$X_ORIGINAL_ID"
 
 # 2-Apigee Target Environment --> Life cycle Stage 
 # -------------------------------------------------
-export X_LIFECYCLE="design"
+export X_LIFECYCLE="$lifecyle"
 echo "LIFECYCLE=$X_LIFECYCLE"
 
 
 # 3- Specification File Name in folder ./specs/oas/proxy --> Specification Filename 
 # ---------------------------------------------------------------------------------
 # Define the folder and the file pattern
-FOLDER="./specs/oas/proxy"
+FOLDER=$oas_folder_path
 FILE_PATTERN="*.yaml"
 
 # Get the First File Matching the pattern
